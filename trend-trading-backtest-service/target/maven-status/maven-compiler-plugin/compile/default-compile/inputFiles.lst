@@ -1,0 +1,9 @@
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/pojo/Trade.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/web/BackTestController.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/pojo/AnnualProfit.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/pojo/Profit.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/pojo/IndexData.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/TrendTradingBackTestServiceApplication.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/service/BackTestService.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/client/IndexDataClientFeignHystrix.java
+/Users/chenjingshu/Documents/FPsupport/trendParentProject/trend-trading-backtest-service/src/main/java/cn/how2j/trend/client/IndexDataClient.java

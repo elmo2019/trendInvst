@@ -1,0 +1,6 @@
+cn/how2j/trend/pojo/Index.class
+cn/how2j/trend/config/IpConfiguration.class
+cn/how2j/trend/web/IndexController.class
+cn/how2j/trend/IndexCodesApplication.class
+cn/how2j/trend/service/IndexService.class
+cn/how2j/trend/config/RedisCacheConfig.class

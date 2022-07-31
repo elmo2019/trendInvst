@@ -1,0 +1,9 @@
+cn/how2j/trend/client/IndexDataClient.class
+cn/how2j/trend/pojo/IndexData.class
+cn/how2j/trend/client/IndexDataClientFeignHystrix.class
+cn/how2j/trend/web/BackTestController.class
+cn/how2j/trend/TrendTradingBackTestServiceApplication.class
+cn/how2j/trend/service/BackTestService.class
+cn/how2j/trend/pojo/AnnualProfit.class
+cn/how2j/trend/pojo/Profit.class
+cn/how2j/trend/pojo/Trade.class
