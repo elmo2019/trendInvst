@@ -29,6 +29,13 @@ public class IndexService {
         indexService.remove();
         return indexService.store();
     }
+    public List<Index> third_part_not_connected(){
+        System.out.println("third_part_not_connected()");
+        Index index= new Index();
+        index.setCode("000000");
+        index.setName("无效指数代码 invalid index code");
+        return CollectionUtil.toList(index);
+    }
 
     @CacheEvict(allEntries=true)
     public void remove(){
@@ -64,12 +71,6 @@ public class IndexService {
         return indexes;
     }
 
-    public List<Index> third_part_not_connected(){
-        System.out.println("third_part_not_connected()");
-        Index index= new Index();
-        index.setCode("000000");
-        index.setName("无效指数代码");
-        return CollectionUtil.toList(index);
-    }
+
 
 }

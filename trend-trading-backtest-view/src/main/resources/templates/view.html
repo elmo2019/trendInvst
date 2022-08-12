@@ -7,6 +7,7 @@
     var chart4AnnualIncome = null;
 
     $(function(){
+            //JS语句定义变量
 	        var data4Vue = {
                 indexes: [],
                 currentIndex: '000300',
@@ -60,6 +61,7 @@
                     this.init();
                     $("[data-toggle='tooltip']").tooltip();
                 },
+                //获取从后端传回来的数据
                 methods: {
                     init:function(){
                         var url =  "http://127.0.0.1:8031/api-codes/codes";
@@ -70,6 +72,7 @@
                             });
                         });
                     },
+                    //把前段选择到的变量指标传到后盾啊
                     simulate:function(){
                         var url =  "http://127.0.0.1:8031/api-backtest/simulate/"+vue.currentIndex+"/"+vue.ma+"/"+vue.buyThreshold+"/"+vue.sellThreshold+"/" +vue.serviceCharge +"/"+vue.startDate+"/"+vue.endDate+"/";
                         axios.get(url).then(function(response) {
@@ -254,7 +257,7 @@
                         lineTension: 0,
                     },
                     {
-                        label: '趋势投资',
+                        label: 'Trend Investing',
                         data: [],
                         borderColor: '#5D98C8',
                         backgroundColor: '#5D98C8',
@@ -268,7 +271,7 @@
             options: {
                 title: {
                     display: true,
-                    text: '指数趋势投资收益对比图'
+                    text: 'Index Trend Investment Returns Comparison Chart'
                 },
                 responsive: true,
                 responsiveAnimationDuration:3000,
@@ -314,7 +317,7 @@
                         lineTension: 0,
                     },
                     {
-                        label: '趋势投资',
+                        label: 'Trend Investing',
                         data: [],
                         borderColor: '#5D98C8',
                         backgroundColor: '#5D98C8',
@@ -328,7 +331,7 @@
             options: {
                 title: {
                     display: true,
-                    text: '指数/趋势收益分布对比图'
+                    text: 'Comparative chart of index/trend return distribution'
                 },
                 responsive: true,
                 responsiveAnimationDuration:3000,
@@ -380,14 +383,13 @@ div#workingArea{
 	margin:50px;
 }
 </style>
-
 <div id="workingArea">
-    <span class="label label-info">回测参数</span>
+    <span class="label label-info">Backtest parameters</span>
     <table class="inputTable ">
         <tr>
             <td width="25%">
-				<span data-toggle="tooltip" data-placement="top" title="选择某一个指数进行模拟回测">
-					请选择指数:<span class="glyphicon glyphicon-question-sign" > </span>
+				<span data-toggle="tooltip" data-placement="top" title="Select a particular index for simulated backtesting">
+					Please select an index:<span class="glyphicon glyphicon-question-sign" > </span>
 				</span>
             </td>
             <td width="25%">
@@ -400,8 +402,8 @@ div#workingArea{
         </tr>
         <tr>
             <td>
-            				<span data-toggle="tooltip" data-placement="top" title="MA 即 moving average, 移动均线的意思。 比如MA20就表示20日均线，取最近20天的值的平均数">
-            				MA(均线) :<span class="glyphicon glyphicon-question-sign	" > </span>
+            				<span data-toggle="tooltip" data-placement="top" title="MA is moving average, Meaning of moving average. For example, MA20 means a 20-day average, taking the average of the last 20 days' values">
+            				MA(moving average) :<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
             </td>
             <td>
@@ -415,8 +417,8 @@ div#workingArea{
         </tr>
         <tr>
             <td>
-           				<span data-toggle="tooltip" data-placement="top" title="当前值大于均线，说明上升趋势来了，就可以购买，或者再稍等等，比均线多 5% 再下手，那么购买阈值就是 1.05 ">
-            				购买阈值:<span class="glyphicon glyphicon-question-sign	" > </span>
+           				<span data-toggle="tooltip" data-placement="top" title="If the current value is greater than the SMA, the uptrend is coming and you can buy, or wait a little longer and buy 5% more than the SMA, then the threshold is 1.05  ">
+            				Purchase Threshold:<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
 
             </td>
@@ -427,8 +429,8 @@ div#workingArea{
             </td>
             <td>
 
-           				<span data-toggle="tooltip" data-placement="top" title="当前值低于均线，说明下跌趋势来了，就可以出售，或者再稍等等，比最近的高点低 5%，那么购买阈值就是 0.95">
-            				出售阈值:<span class="glyphicon glyphicon-question-sign	" > </span>
+           				<span data-toggle="tooltip" data-placement="top" title="The current value is below the average, indicating a downtrend, so you can sell, or wait a little longer and go 5% below the most recent high, then the Sale Threshold is 0.95">
+            				Sale Threshold:<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
 
             </td>
@@ -441,8 +443,8 @@ div#workingArea{
         </tr>
         <tr>
             <td>
-           				<span data-toggle="tooltip" data-placement="top" title="每一笔交易都会有手续费，一般说来手续费都不高，千分之 1.5 的左右，默认是没有计算手续费的">
-            				手续费:<span class="glyphicon glyphicon-question-sign	" > </span>
+           				<span data-toggle="tooltip" data-placement="top" title="There is a fee for each transaction, which is generally not high, around 1.5 per thousand, and by default no fee is calculated">
+            				service charge:<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
             </td>
             <td>
@@ -456,8 +458,8 @@ div#workingArea{
         </tr>
         <tr>
             <td>
-           				<span data-toggle="tooltip" data-placement="top" title="指定模拟回测的开始日期，默认是当前指数最开始的日期">
-            				开始日期:<span class="glyphicon glyphicon-question-sign	" > </span>
+           				<span data-toggle="tooltip" data-placement="top" title="Specify the start date of the simulated backtest, the default is the most recent start date of the current index">
+            				Start date:<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
             </td>
             <td>
@@ -468,8 +470,8 @@ div#workingArea{
                 </div>
             </td>
             <td>
-           				<span data-toggle="tooltip" data-placement="top" title="指定模拟回测的结束日期，默认是当前指数最后的日期">
-            				结束日期:<span class="glyphicon glyphicon-question-sign	" > </span>
+           				<span data-toggle="tooltip" data-placement="top" title="Specify the end date of the simulation backtest, the default is the last date of the current index">
+            				end date:<span class="glyphicon glyphicon-question-sign	" > </span>
            				</span>
             </td>
             <td>
@@ -482,41 +484,40 @@ div#workingArea{
 
         </tr>
     </table>
-
-    <div class="label label-warning">收益对比图</div>
+    <div class="label label-warning">Earnings Comparison Chart</div>
 
     <div  class="div4chart" style="margin:0px auto; width:80%">
         <canvas class='canvas4Profit'></canvas>
     </div>
 
-    <div class="label label-warning">收益一览</div>
+    <div class="label label-warning">Earnings comparison</div>
 
     <table class="table table-striped table-bordered table-condensed" >
         <thead>
 
-        <th>投资类型</th>
-        <th>投资时长 (年)</th>
-        <th>1000元投资收益</th>
-        <th>总收益率</th>
-        <th>年化收益率</th>
+        <th>Type of investment</th>
+        <th>Duration of investment (years)</th>
+        <th>1000 investment income</th>
+        <th>Total return</th>
+        <th>Annualised rate of return</th>
         </thead>
         <tbody>
         <tr>
-            <td>指数投资</td>
+            <td>Index Investments</td>
             <td>{{years|formatNumberFilter(2)}} </td>
             <td>{{(indexIncomeTotal+1)*1000|formatMoneyFilter}}</td>
             <td>{{indexIncomeTotal*100|formatNumberFilter(2)}}%</td>
             <td>{{indexIncomeAnnual*100|formatNumberFilter(2)}}%</td>
         </tr>
         <tr>
-            <td>趋势投资</td>
+            <td>Trend Investing</td>
             <td>{{years|formatNumberFilter(2)}} </td>
             <td>{{(trendIncomeTotal+1)*1000|formatMoneyFilter}}</td>
             <td>{{trendIncomeTotal*100|formatNumberFilter(2)}}%</td>
             <td>{{trendIncomeAnnual*100|formatNumberFilter(2)}}%</td>
         </tr>
         <tr>
-            <td>相对收益</td>
+            <td>Relative returns</td>
             <td>n/a</td>
             <td>{{(trendIncomeTotal-indexIncomeTotal)*1000|formatMoneyFilter}}</td>
             <td>{{(trendIncomeTotal-indexIncomeTotal)*100|formatNumberFilter(2)}}%</td>
@@ -527,47 +528,47 @@ div#workingArea{
 
     </table>
 
-    <div class="label label-warning">交易统计</div>
+    <div class="label label-warning">Transaction statistics</div>
     <table class="table table-bordered table-condensed" >
         <thead>
-        <th align="center" colspan="2">趋势投资盈亏统计</th>
+        <th align="center" colspan="2">Trend Investing Profit and Loss Statistics</th>
         </thead>
         <tbody>
         <tr>
-            <td width="50%">总共交易次数</td>
+            <td width="50%">Total number of transactions</td>
             <td>{{winCount+lossCount}}</td>
         </tr>
         <tr>
-            <td>盈利交易次数</td>
+            <td>Number of profitable trades</td>
             <td>{{winCount}}</td>
         </tr>
         <tr>
-            <td>平均盈利比率</td>
+            <td>Average profitability ratio</td>
             <td>{{avgWinRate*100|formatNumberFilter(2)}}%</td>
         </tr>
         <tr>
-            <td>亏损交易次数</td>
+            <td>Number of loss-making trades</td>
             <td>{{lossCount}}</td>
         </tr>
         <tr>
-            <td>平均亏损比率</td>
+            <td>Average loss ratio</td>
             <td>{{avgLossRate*100|formatNumberFilter(2)}}%</td>
         </tr>
         <tr>
-            <td>胜率</td>
+            <td>Winning percentage</td>
             <td>{{(winCount/(winCount+lossCount))*100|formatNumberFilter(2)}}%	</td>
         </tr>
 
         </tbody>
     </table>
 
-    <div class="label label-warning">收益分布对比表</div>
+    <div class="label label-warning">Comparative Income Distribution Table</div>
 
     <table class="table table-striped table-bordered table-condensed" >
         <thead>
-        <th>年份</th>
-        <th>指数收益</th>
-        <th>趋势投资收益</th>
+        <th>year</th>
+        <th>Index return</th>
+        <th>Trend investment income</th>
         </thead>
         <tbody>
         <tr v-for="bean in annualProfits">
@@ -585,7 +586,7 @@ div#workingArea{
 
     </table>
 
-    <div class="label label-warning">收益分布对比图</div>
+    <div class="label label-warning">Comparative chart of earnings distribution</div>
 
     <div  class="div4chart" style="margin:0px auto; width:80%">
         <canvas class='canvas4AnnualIncome'></canvas>
@@ -596,19 +597,19 @@ div#workingArea{
     <table class="table table-striped table-bordered table-condensed table-hover" >
         <thead>
 
-        <th>盈/亏</th>
-        <th>购买日期</th>
-        <th>购买盘点</th>
-        <th>出售日期</th>
-        <th>出售盘点</th>
-        <th>盈亏比率</th>
-        <th>1000元投资收益</th>
+        <th>Profit/loss</th>
+        <th>Date of purchase</th>
+        <th>Purchase Inventory</th>
+        <th>Date of sale</th>
+        <th>sale Inventory</th>
+        <th>Profit and loss ratio</th>
+        <th>1000 investment income</th>
         </thead>
         <tbody>
         <tr v-for="bean in trades">
             <td>
-                <span v-if="bean.sellClosePoint>bean.buyClosePoint" class="label label-danger">盈利</span>
-                <span v-if="bean.sellClosePoint<=bean.buyClosePoint" class="label label-success">亏损</span>
+                <span v-if="bean.sellClosePoint>bean.buyClosePoint" class="label label-danger">profit</span>
+                <span v-if="bean.sellClosePoint<=bean.buyClosePoint" class="label label-success">loss</span>
 
             </td>
             <td>{{bean.buyDate}}</td>
